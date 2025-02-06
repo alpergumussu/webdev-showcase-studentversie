@@ -19,5 +19,53 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  padding: 0;
+  margin: 0;
+}
+
+/*student uitwerking*/
+
+html,body {
+    margin: 0;
+    padding; 9;
+    width: 0;
+}
+
+.containerTyping {
+    display: inline-block;
+}
+
+.typing {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    animation: typing 1s steps(20, end) forwards, blinking 1.2s infinite;
+    font-size: 2rem;
+    color: white;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinking {
+    from {
+        border-color: transparent;
+    }
+
+    to {
+        border-color: goldenrod;
+    }
+}
 }
