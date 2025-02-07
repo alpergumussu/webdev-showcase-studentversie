@@ -9,10 +9,15 @@
     <link rel="stylesheet" href="~/css/profielpagina.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/gdpr.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Showcase_Profielpagina.styles.css" asp-append-version="true" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/gdpr.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </head>
 <body>
 
-    <!-- Preloader -->
     <div class="preloader-1" id="loader">
         <span class="line line-1"></span>
         <span class="line line-2"></span>
@@ -30,6 +35,22 @@
         <span class="line line-14"></span>
         <span class="line line-15"></span>
     </div>
+
+
+    <section class="gdpr-consent hide" style="display: none;">
+        <div class="gdpr-consent__description">
+            <p>
+                Deze website gebruikt cookies.
+                We gebruiken cookies om content te personaliseren en voor het analyseren
+                van verkeer op de website.
+            </p>
+        </div>
+
+        <div class="gdpr-consent__choice">
+            <button class="gdpr-consent__button--accept">Ja</button>
+            <button class="gdpr-consent__button--reject">Nee</button>
+        </div>
+    </section>
 
     <!-- Content -->
     <main id="content">
@@ -66,23 +87,10 @@
 
         </section>
 
-        <!-- Card Section 2 -->
+        <!-- Card Section 2 (Updated) -->
         <section class="card-container-2">
-
-            <!-- Card 3 Container -->
-            <div class="card3-container-">
-                <article class="card3">
-                    <h2 class="card1-title gradient-text">Achievements in my professional life.</h2>
-                    <p>
-                        Hard work and perseverance have defined my journey. From a young age, I took on responsibilities beyond my years, learning discipline, leadership, and adaptability in every role I pursued.
-                        No challenge has ever stopped me—I’ve worked my way up through both education and career, proving that growth comes from persistence and a willingness to learn.
-                        Now, as I dive into Software Engineering, I bring with me the same dedication, problem-solving mindset, and drive to keep pushing forward, no matter the obstacles.
-                    </p>
-                </article>
-            </div>
-
-            <!-- Card 4 Container -->
-            <div class="card4-container-">
+            <!-- Card 4 (Move to the Left) -->
+            <div class="card4-container">
                 <article class="card4">
                     <div class="skills-container">
                         <h2 class="card1-title gradient-text">Skills & Strengths</h2>
@@ -115,16 +123,27 @@
                 </article>
             </div>
 
+            <!-- Card 3 & Card 5 (Move to the Right) -->
+            <div class="card3-container">
+                <article class="card3">
+                    <h2 class="card1-title gradient-text">Achievements in my professional life.</h2>
+                    <p>
+                        Hard work and perseverance have defined my journey. From a young age, I took on responsibilities beyond my years, learning discipline, leadership, and adaptability in every role I pursued.
+                        No challenge has ever stopped me—I’ve worked my way up through both education and career, proving that growth comes from persistence and a willingness to learn.
+                        Now, as I dive into Software Engineering, I bring with me the same dedication, problem-solving mindset, and drive to keep pushing forward, no matter the obstacles.
+                    </p>
+                </article>
+
+                <article class="card5">
+                    <h2 class="card1-title gradient-text">ContactForm</h2>
+                </article>
+            </div>
         </section>
+
 
     </main>
 
     @RenderBody()
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/gdpr.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

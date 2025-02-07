@@ -1,22 +1,19 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
-window.addEventListener('load', function () {
+﻿window.addEventListener('load', function () {
     setTimeout(function () {
-        document.getElementById('loader').style.opacity = '0'; // Loader fades out
+        document.getElementById('loader').style.opacity = '0'; 
 
         setTimeout(function () {
-            document.getElementById('loader').style.display = 'none'; // Loader is hidden
+            document.getElementById('loader').style.display = 'none'; 
             const content = document.getElementById('content');
-            content.style.display = 'block'; // Show content (but still transparent)
+            content.style.display = 'block';
 
             setTimeout(function () {
-                content.style.opacity = '1'; // Content fades in
-                content.style.transform = 'translateY(0)'; // Content slides up
-            }, 50); // Small delay to trigger transition
-        }, 500); // Matches fade-out time
-    }, 500); // Ensures the loader stays visible for at least 1 second
-});
+                content.style.opacity = '1';
+                content.style.transform = 'translateY(0)';
 
+                const gdpr = new GDPR();
+
+            }, 50);
+        }, 500);
+    }, 500);
+});
