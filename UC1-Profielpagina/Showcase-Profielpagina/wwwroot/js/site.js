@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
                 content.style.opacity = '1'; // Content fades in
                 content.style.transform = 'translateY(0)'; // Content slides up
             }, 50); // Small delay to trigger transition
-        }, 1000); // Matches fade-out time
-    }, 1000); // Ensures the loader stays visible for at least 1 second
+        }, 500); // Matches fade-out time
+    }, 500); // Ensures the loader stays visible for at least 1 second
 });
 

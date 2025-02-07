@@ -1,24 +1,12 @@
+/* Mobile-first styles */
 html {
-    font-size: 14px;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-
-html {
-    position: relative;
-    min-height: 100%;
-    background-color: #001221;
+    font-size:14px;
 }
 
 body {
     margin: 0;
     padding: 0;
-    min-height: 100vh; 
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,77 +26,78 @@ div {
 
 .preloader-1 {
     white-space: nowrap;
-    transition: opacity 1s ease-out;
+    transition: opacity 500ms ease-out;
     color: ghostwhite;
 }
 
     .preloader-1 .line {
-        width: 25px;
-        height: 500px;
-        letter-spacing: 5px;
+        width: 2.5px;
+        height: 250px;
+        letter-spacing: 2.5px;
         background: #fff;
         margin: 0 3px;
         display: inline-block;
-        animation: opacity-1 1000ms infinite ease-in-out;
+        animation: opacity-1 500ms infinite ease-in-out;
     }
 
-    .preloader-1 .line-1, .preloader-2 .line-1 {
+    /* Preloader animation delays */
+    .preloader-1 .line-1 {
         animation-delay: 1050ms;
     }
 
-    .preloader-1 .line-2, .preloader-2 .line-2 {
+    .preloader-1 .line-2 {
         animation-delay: 900ms;
     }
 
-    .preloader-1 .line-3, .preloader-2 .line-3 {
+    .preloader-1 .line-3 {
         animation-delay: 750ms;
     }
 
-    .preloader-1 .line-4, .preloader-2 .line-4 {
+    .preloader-1 .line-4 {
         animation-delay: 600ms;
     }
 
-    .preloader-1 .line-5, .preloader-2 .line-5 {
+    .preloader-1 .line-5 {
         animation-delay: 450ms;
     }
 
-    .preloader-1 .line-6, .preloader-2 .line-6 {
+    .preloader-1 .line-6 {
         animation-delay: 300ms;
     }
 
-    .preloader-1 .line-7, .preloader-2 .line-7 {
+    .preloader-1 .line-7 {
         animation-delay: 150ms;
     }
 
-    .preloader-1 .line-8, .preloader-2 .line-8 {
-        animation-delay: 0ms; 
+    .preloader-1 .line-8 {
+        animation-delay: 0ms;
     }
 
-    .preloader-1 .line-9, .preloader-2 .line-9 {
+    .preloader-1 .line-9 {
         animation-delay: 150ms;
     }
 
-    .preloader-1 .line-10, .preloader-2 .line-10 {
+    .preloader-1 .line-10 {
         animation-delay: 300ms;
     }
 
-    .preloader-1 .line-11, .preloader-2 .line-11 {
+    .preloader-1 .line-11 {
         animation-delay: 450ms;
     }
 
-    .preloader-1 .line-12, .preloader-2 .line-12 {
+    .preloader-1 .line-12 {
         animation-delay: 600ms;
     }
 
-    .preloader-1 .line-13, .preloader-2 .line-13 {
+    .preloader-1 .line-13 {
         animation-delay: 750ms;
     }
 
-    .preloader-1 .line-14, .preloader-2 .line-14 {
+    .preloader-1 .line-14 {
         animation-delay: 900ms;
     }
 
-    .preloader-1 .line-15, .preloader-2 .line-15 {
+    .preloader-1 .line-15 {
         animation-delay: 1050ms;
     }
 
@@ -143,31 +132,36 @@ div {
     }
 }
 
-    #content {
-    display: none; 
-    opacity: 0; 
-    transform: translateY(50px); 
-    transition: opacity 1s ease, transform 1s ease; 
+#content {
+    display: none;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
     text-align: center;
     font-family: Arial, sans-serif;
     color: #334250;
 }
 
     #content h1 {
-        font-size: 3em;
-        color: ghostwhite
+        font-size: 1.5em;
+        color: ghostwhite;
+    }
+
+    #content h2 {
+        font-size: 1em;
+        color: ghostwhite;
     }
 
     #content p {
         color: ghostwhite;
-        font-size: 1.5em;
+        font-size: 0.75em;
     }
 
-
+/* Mobile-first card layout */
 .card-container-1 {
     display: flex;
-    flex-direction: column; 
-    width: 100%; 
+    flex-direction: column;
+    width: 100%;
     align-items: center;
 }
 
@@ -175,7 +169,7 @@ div {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    align-items: center; 
+    align-items: center;
 }
 
 .card1, .card2, .card3, .card4 {
@@ -188,45 +182,170 @@ div {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Card styles for small screens */
+.card1, .card2 {
+    width: 98%;
+    margin-top: 10px;
+}
+
 .card1 {
-    width: 1000px;
     height: 320px;
-    margin-bottom: 20px;
 }
 
 .card2 {
-    width: 1000px;
     height: 200px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .card3 {
-    width: 580px;  
-    height: 500px;
-    margin-left: 46px;
-    background-color: #011425;
-    padding: 20px;
-    border-radius: 15px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #334250;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 4px;
+    height: 250px;
 }
 
 .card4 {
-    width: 400px;
-    height: 500px;
-    margin-right: 46px;
-    background-color: #011425;
-    padding: 20px;
-    border-radius: 15px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #334250;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 250px;
+    margin-left: 10px;
+    margin-right: 4px;
 }
-  
-  
-  
 
-        
+/* Larger screens (desktops and up) */
+@media (min-width: 1024px) {
+
+    .preloader-1 .line {
+        width: 25px;
+        height: 500px;
+        background: #fff;
+        margin: 0 3px;
+        display: inline-block;
+        animation: opacity-1 500ms infinite ease-in-out;
+    }
+
+    /* Preloader animation delays */
+    .preloader-1 .line-1 {
+        animation-delay: 1050ms;
+    }
+
+    .preloader-1 .line-2 {
+        animation-delay: 900ms;
+    }
+
+    .preloader-1 .line-3 {
+        animation-delay: 750ms;
+    }
+
+    .preloader-1 .line-4 {
+        animation-delay: 600ms;
+    }
+
+    .preloader-1 .line-5 {
+        animation-delay: 450ms;
+    }
+
+    .preloader-1 .line-6 {
+        animation-delay: 300ms;
+    }
+
+    .preloader-1 .line-7 {
+        animation-delay: 150ms;
+    }
+
+    .preloader-1 .line-8 {
+        animation-delay: 0ms;
+    }
+
+    .preloader-1 .line-9 {
+        animation-delay: 150ms;
+    }
+
+    .preloader-1 .line-10 {
+        animation-delay: 300ms;
+    }
+
+    .preloader-1 .line-11 {
+        animation-delay: 450ms;
+    }
+
+    .preloader-1 .line-12 {
+        animation-delay: 600ms;
+    }
+
+    .preloader-1 .line-13 {
+        animation-delay: 750ms;
+    }
+
+    .preloader-1 .line-14 {
+        animation-delay: 900ms;
+    }
+
+    .preloader-1 .line-15 {
+        animation-delay: 1050ms;
+    }
+
+    @keyframes opacity-1 {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes opacity-2 {
+        0% {
+            opacity: 1;
+            height: 15px;
+        }
+
+        50% {
+            opacity: 0;
+            height: 12px;
+        }
+
+        100% {
+            opacity: 1;
+            height: 15px;
+        }
+    }
+
+
+    #content h1 {
+        font-size: 3em;
+        color: ghostwhite;
+    }
+
+    #content h2 {
+        font-size: 2em;
+        color: ghostwhite;
+    }
+
+    #content p {
+        color: ghostwhite;
+        font-size: 1.5em;
+    }
+
+    .card1 {
+        width: 1000px;
+    }
+
+    .card2 {
+        width: 1000px;
+        margin-bottom: 10px;
+    }
+
+    .card3 {
+        width: 495px;
+        height: 500px;
+        margin-left: 45px;
+    }
+
+    .card4 {
+        width: 495px;
+        height: 500px;
+        margin-right: 45px;
+    }
+}

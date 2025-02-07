@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Showcase_Profielpagina</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -24,44 +23,43 @@
         <span class="line line-7"></span>
         <span class="line line-8"></span>
         <span class="line line-9"></span>
-        <span class="line line-10"></span> 
-        <span class="line line-11"></span> 
+        <span class="line line-10"></span>
+        <span class="line line-11"></span>
         <span class="line line-12"></span>
-        <span class="line line-13"></span> 
+        <span class="line line-13"></span>
         <span class="line line-14"></span>
-        <span class="line line-15"></span>     
+        <span class="line line-15"></span>
     </div>
 
-
     <!-- Content -->
-    <div id="content">
+    <main id="content">
         <h1>Welcome to the Page!</h1>
         <p>This is the content of the page, and it appears after the loader finishes.</p>
 
-        <!-- Card Container 1 -->
-        <div class="card-container-1">
-            <div class="card1">
+        <!-- Card Section 1 -->
+        <section class="card-container-1">
+            <article class="card1">
                 <h2>Test Card 1</h2>
                 <p>This is some example text inside a card. You can add more test content here to simulate a real page.</p>
-            </div>
-            <div class="card2">
+            </article>
+            <article class="card2">
                 <h2>Test Card 2</h2>
                 <p>Another example. Use this section to test different styles and content types!</p>
-            </div>
-        </div>
+            </article>
+        </section>
 
-        <!-- Card Container 2 -->
-        <div class="card-container-2">
-            <div class="card3">
+        <!-- Card Section 2 -->
+        <section class="card-container-2">
+            <article class="card3">
                 <h2>Test Card 3</h2>
                 <p>Feel free to add more content like images, buttons, and other elements for further testing!</p>
-            </div>
-            <div class="card4">
+            </article>
+            <article class="card4">
                 <h2>Test Card 4</h2>
                 <p>Feel free to add more content like images, buttons, and other elements for further testing!</p>
-            </div>
-        </div>
-    </div>
+            </article>
+        </section>
+    </main>
 
     @RenderBody()
 
