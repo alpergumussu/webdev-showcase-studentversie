@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Revx Neue Demo SemBd';
+    src: url('RevxNeueDemo-SemiBoldItalic.woff2') format('woff2'),
+        url('RevxNeueDemo-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Revx Neue Demo';
+    src: url('RevxNeueDemo-Regular.woff2') format('woff2'),
+        url('RevxNeueDemo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Revx Neue Demo SemBd';
+    src: url('RevxNeueDemo-SemiBold.woff2') format('woff2'),
+        url('RevxNeueDemo-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Revx Neue Demo';
+    src: url('RevxNeueDemo-Italic.woff2') format('woff2'),
+        url('RevxNeueDemo-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
