@@ -6,14 +6,14 @@
     <title>@ViewData["Title"] - Showcase_Profielpagina</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/profielpagina.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/gdpr.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Showcase_Profielpagina.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Loader.css" asp-append-version="true" />
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/gdpr.js" asp-append-version="true"></script>
+    <script src="~/js/Validation.js" asp-append-version="true"></script> 
     @await RenderSectionAsync("Scripts", required: false)
 </head>
 <body>
@@ -136,22 +136,43 @@
 
                 <article class="card5">
                     <h2 class="card1-title gradient-text">ContactForm</h2>
-                        <form>
-                            <label for="fname">First name:</label><br>
-                            <input type="text" id="fname" name="fname"><br>
-                            <label for="lname">Last name:</label><br>
-                            <input type="text" id="lname" name="lname"><br>
-                            <label for="email">E-mail:</label><br>
-                            <input type="text" id="email" name="email"><br/>
-                            <label for="subject">Subject:</label><br>
-                            <input type="text" id="subject" name="subject"><br />
-                            <label for="message">Message:</label><br>
-                            <textarea></textarea><br />
-                        </form>
+                    <div id="error-box" class="error-box"></div>
+
+                    <form id="contactForm">
+                        <label for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname" required><br>
+
+                        <label for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname" required><br>
+
+                        <label for="email">E-mail:</label><br>
+                        <input type="email" id="email" name="email" required><br>
+
+                        <label for="phone">Phone Number:</label><br>
+                        <input type="tel" id="phone" name="phone" pattern="^\+?[0-9]{10,15}$" required><br>
+
+                        <label for="subject">Subject:</label><br>
+                        <input type="text" id="subject" name="subject" required><br>
+
+                        <label for="message">Message:</label><br>
+                        <textarea id="message" name="message" required></textarea><br>
+
+                        <div class="button-container">
+                        <input type="submit" value="Submit">
+                        </div>
+                    </form>
+
                 </article>
             </div>
         </section>
-
+        <!-- Success Popup -->
+        <div id="popup" class="popup-container">
+            <div class="popup-box">
+                <span id="closePopup" class="close-btn">&times;</span>
+                <h2>Thank You!</h2>
+                <p>Your form has been submitted successfully.</p>
+            </div>
+        </div>
 
     </main>
 

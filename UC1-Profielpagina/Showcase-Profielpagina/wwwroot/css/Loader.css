@@ -1,0 +1,218 @@
+﻿@font-face {
+    font-family: 'Revx Neue';
+    src: url('../fonts/RevxNeueDemo-SemiBold.woff2') format('woff2'), url('../fonts/RevxNeueDemo-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.preloader-1 {
+    white-space: nowrap;
+    transition: opacity 500ms ease-out;
+    color: ghostwhite;
+}
+
+    .preloader-1 .line {
+        width: 2.5px;
+        height: 250px;
+        letter-spacing: 2.5px;
+        background: #8952f7;
+        margin: 0 3px;
+        display: inline-block;
+        animation: opacity-1 500ms infinite ease-in-out;
+    }
+
+    /* Preloader animation delays */
+    .preloader-1 .line-1 {
+        animation-delay: 1050ms;
+    }
+
+    .preloader-1 .line-2 {
+        animation-delay: 900ms;
+    }
+
+    .preloader-1 .line-3 {
+        animation-delay: 750ms;
+    }
+
+    .preloader-1 .line-4 {
+        animation-delay: 600ms;
+    }
+
+    .preloader-1 .line-5 {
+        animation-delay: 450ms;
+    }
+
+    .preloader-1 .line-6 {
+        animation-delay: 300ms;
+    }
+
+    .preloader-1 .line-7 {
+        animation-delay: 150ms;
+    }
+
+    .preloader-1 .line-8 {
+        animation-delay: 0ms;
+    }
+
+    .preloader-1 .line-9 {
+        animation-delay: 150ms;
+    }
+
+    .preloader-1 .line-10 {
+        animation-delay: 300ms;
+    }
+
+    .preloader-1 .line-11 {
+        animation-delay: 450ms;
+    }
+
+    .preloader-1 .line-12 {
+        animation-delay: 600ms;
+    }
+
+    .preloader-1 .line-13 {
+        animation-delay: 750ms;
+    }
+
+    .preloader-1 .line-14 {
+        animation-delay: 900ms;
+    }
+
+    .preloader-1 .line-15 {
+        animation-delay: 1050ms;
+    }
+
+@keyframes opacity-1 {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacity-2 {
+    0% {
+        opacity: 1;
+        height: 15px;
+    }
+
+    50% {
+        opacity: 0;
+        height: 12px;
+    }
+
+    100% {
+        opacity: 1;
+        height: 15px;
+    }
+}
+
+/* Larger screens (desktops and up) */
+@media (min-width: 1024px) {
+
+    .preloader-1 .line {
+        width: 25px;
+        height: 500px;
+        background: #8952f7;
+        margin: 0 3px;
+        display: inline-block;
+        animation: opacity-1 500ms infinite ease-in-out;
+    }
+
+    .preloader-1 .line-1 {
+        animation-delay: 1050ms;
+    }
+
+    .preloader-1 .line-2 {
+        animation-delay: 900ms;
+    }
+
+    .preloader-1 .line-3 {
+        animation-delay: 750ms;
+    }
+
+    .preloader-1 .line-4 {
+        animation-delay: 600ms;
+    }
+
+    .preloader-1 .line-5 {
+        animation-delay: 450ms;
+    }
+
+    .preloader-1 .line-6 {
+        animation-delay: 300ms;
+    }
+
+    .preloader-1 .line-7 {
+        animation-delay: 150ms;
+    }
+
+    .preloader-1 .line-8 {
+        animation-delay: 0ms;
+    }
+
+    .preloader-1 .line-9 {
+        animation-delay: 150ms;
+    }
+
+    .preloader-1 .line-10 {
+        animation-delay: 300ms;
+    }
+
+    .preloader-1 .line-11 {
+        animation-delay: 450ms;
+    }
+
+    .preloader-1 .line-12 {
+        animation-delay: 600ms;
+    }
+
+    .preloader-1 .line-13 {
+        animation-delay: 750ms;
+    }
+
+    .preloader-1 .line-14 {
+        animation-delay: 900ms;
+    }
+
+    .preloader-1 .line-15 {
+        animation-delay: 1050ms;
+    }
+
+    @keyframes opacity-1 {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes opacity-2 {
+        0% {
+            opacity: 1;
+            height: 15px;
+        }
+
+        50% {
+            opacity: 0;
+            height: 12px;
+        }
+
+        100% {
+            opacity: 1;
+            height: 15px;
+        }
+    }
+}
