@@ -1,63 +1,57 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Showcase_Contactpagina.Models;
-using System.Text;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
+using Showcase_Profielpagina.Services;
+using Showcase_Profielpagina.Models;
+using Microsoft.Extensions.Options;
+using System.Net.Http;
+
 
 namespace Showcase_Contactpagina.Controllers
 {
     public class ContactController : Controller
     {
-        private readonly HttpClient _httpClient;
-        public ContactController(HttpClient httpClient)
+        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly RecaptchaSettings _recaptchaSettings;
+        private const string RecaptchaVerifyUrl = "https://www.google.com/recaptcha/api/siteverify";
+
+        public ContactController(IHttpClientFactory httpClientFactory, IOptions<RecaptchaSettings> recaptchaSettings)
         {
-            _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri("https://localhost:7278");
+            _httpClientFactory = httpClientFactory;
+            _recaptchaSettings = recaptchaSettings.Value;
         }
+
 
         // GET: ContactController
         public ActionResult Index()
         {
+            ViewBag.RecaptchaSiteKey = _recaptchaSettings.SiteKey; 
             return View();
         }
 
         // POST: ContactController
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Index(Contactform form)
+        public async Task<IActionResult> SubmitContactForm([FromBody] ContactForm form)
         {
             if (!ModelState.IsValid)
-            {
-                ViewBag.Message = "De ingevulde velden voldoen niet aan de gestelde voorwaarden";
-                return View();
-            }
+                return BadRequest(new { message = "Invalid form data." });
 
-            var settings = new JsonSerializerSettings
-            {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
-            };
+            var secretKey = _recaptchaSettings.SecretKey;
 
-            var json = JsonConvert.SerializeObject(form, settings);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            using var client = _httpClientFactory.CreateClient();
 
-            //Gebruik _httpClient om een POST-request te doen naar ShowcaseAPI die de Mail uiteindelijk verstuurt met Mailtrap (of een alternatief).
-            //Verstuur de gegevens van het ingevulde formulier mee aan de API, zodat dit per mail verstuurd kan worden naar de ontvanger.
-            //Hint: je kunt dit met één regel code doen. Niet te moeilijk denken dus. :-)
-            //Hint: vergeet niet om de mailfunctionaliteit werkend te maken in ShowcaseAPI > Controllers > MailController.cs,
-            //      nadat je een account hebt aangemaakt op Mailtrap (of een alternatief).
+            var response = await client.PostAsync($"{RecaptchaVerifyUrl}?secret={secretKey}&response={form.GRecaptchaResponse}", null);
 
-            HttpResponseMessage response = new HttpResponseMessage(); // Vervang deze regel met het POST-request
+            var json = await response.Content.ReadAsStringAsync();
 
-            if (!response.IsSuccessStatusCode)
-            {
-                ViewBag.Message = "Er is iets misgegaan";
-                return View();
-            }
+            var captchaResult = JsonSerializer.Deserialize<RecaptchaResponse>(json);
 
-            ViewBag.Message = "Het contactformulier is verstuurd";
+            if (captchaResult == null || !captchaResult.Success)
+                return BadRequest(new { message = "reCAPTCHA verification failed." });
 
-            return View();
+            // TODO: Implement email sending (Mailtrap, SendGrid, SMTP)
+
+            return Ok(new { message = "Your message has been sent successfully!" });
         }
     }
 }

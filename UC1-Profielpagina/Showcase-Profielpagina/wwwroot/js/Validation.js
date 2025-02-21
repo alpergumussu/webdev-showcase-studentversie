@@ -11,13 +11,20 @@
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        console.log("Form submitted!"); // Debugging
+        console.log("Form submitted!"); 
 
-        // Show the popup only on valid submission
+        var captchaResponse = grecaptcha.getResponse();
+
+        if (captchaResponse.length == 0) {
+           
+            return; 
+        }
+
         document.getElementById("popup").style.display = "flex";
 
-        // Reset the form
         form.reset();
+
+        grecaptcha.reset()
     });
 
     document.getElementById("closePopup").addEventListener("click", function () {

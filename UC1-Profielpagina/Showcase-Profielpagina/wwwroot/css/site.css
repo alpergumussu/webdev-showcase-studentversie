@@ -96,6 +96,14 @@ div {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.recaptcha-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
+
+
 .headshot-img {
     width: 300px; 
     height: 300px; 
@@ -319,7 +327,7 @@ label {
     .card5 {
         width: 100%; /* Makes it responsive */
         max-width: 741px; /* Keeps max size for larger screens */
-        height: 830px; /* Allows content to expand naturally */
+        height: 900px; /* Allows content to expand naturally */
         display: block; /* Ensures it’s visible */
     }
 }

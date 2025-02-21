@@ -1,3 +1,6 @@
+﻿using Microsoft.Extensions.Options;
+using Showcase_Profielpagina.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container. test

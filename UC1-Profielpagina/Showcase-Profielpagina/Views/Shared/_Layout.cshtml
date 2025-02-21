@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/gdpr.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Loader.css" asp-append-version="true" />
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
@@ -137,30 +137,44 @@
                 <article class="card5">
                     <h2 class="card1-title gradient-text">ContactForm</h2>
                     <div id="error-box" class="error-box"></div>
+                 
+                        <form id="contactForm" action="/Home/SubmitForm" method="POST">
+                            <label for="fname">First name:</label><br>
+                            <input type="text" id="fname" name="fname" required><br>
 
-                    <form id="contactForm">
-                        <label for="fname">First name:</label><br>
-                        <input type="text" id="fname" name="fname" required><br>
+                            <label for="lname">Last name:</label><br>
+                            <input type="text" id="lname" name="lname" required><br>
 
-                        <label for="lname">Last name:</label><br>
-                        <input type="text" id="lname" name="lname" required><br>
+                            <label for="email">E-mail:</label><br>
+                            <input type="email" id="email" name="email" required><br>
 
-                        <label for="email">E-mail:</label><br>
-                        <input type="email" id="email" name="email" required><br>
+                            <label for="phone">Phone Number:</label><br>
+                            <input type="tel" id="phone" name="phone" pattern="^\+?[0-9]{10,15}$" required><br>
 
-                        <label for="phone">Phone Number:</label><br>
-                        <input type="tel" id="phone" name="phone" pattern="^\+?[0-9]{10,15}$" required><br>
+                            <label for="subject">Subject:</label><br>
+                            <input type="text" id="subject" name="subject" required><br>
 
-                        <label for="subject">Subject:</label><br>
-                        <input type="text" id="subject" name="subject" required><br>
+                            <label for="message">Message:</label><br>
+                            <textarea id="message" name="message" required></textarea><br>
 
-                        <label for="message">Message:</label><br>
-                        <textarea id="message" name="message" required></textarea><br>
-
-                        <div class="button-container">
-                        <input type="submit" value="Submit">
+                            <!-- Google reCAPTCHA -->
+                        <div class="recaptcha-container">
+                        <div class="g-recaptcha" data-sitekey="6Lc6zN0qAAAAAM1b3G3EjFpTLrHRjRq_aQHbfPEs"></div>
                         </div>
-                    </form>
+                            <div class="button-container">
+                                <input type="submit" value="Submit">
+                            </div>
+                        </form>
+
+                        <script>
+                            document.getElementById("contactForm").addEventListener("submit", function(event) {
+                                var response = grecaptcha.getResponse();
+                                if (response.length == 0) {
+                                    event.preventDefault();
+                                    alert("Please verify that you are not a robot.");
+                                }
+                            });
+                        </script>
 
                 </article>
             </div>
