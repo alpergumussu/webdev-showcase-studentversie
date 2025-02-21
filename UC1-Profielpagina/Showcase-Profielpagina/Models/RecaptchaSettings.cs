@@ -1,8 +1,9 @@
-﻿namespace Showcase_Profielpagina.Models
+﻿
+public class RecaptchaSettings
 {
-    public class RecaptchaSettings
-    {
-        public string SiteKey { get; set; }
-        public string SecretKey { get; set; }
-    }
+    public bool Success { get; set; }
+    public double Score { get; set; }
+    public string Action { get; set; }
+    public string[] ErrorCodes { get; set; }
 }
+
