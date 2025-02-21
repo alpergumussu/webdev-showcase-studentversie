@@ -31,7 +31,7 @@ namespace Showcase_Contactpagina.Controllers
         // POST: ContactController
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SubmitContactForm([FromBody] ContactForm form)
+        public async Task<IActionResult> SubmitContactForm(ContactForm form)
         {
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid form data." });
