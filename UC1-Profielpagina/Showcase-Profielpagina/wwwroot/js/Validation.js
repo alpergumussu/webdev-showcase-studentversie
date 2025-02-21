@@ -10,7 +10,14 @@
         event.preventDefault();
         console.log("📩 Form submitted!");
 
-        // Get reCAPTCHA response
+        // Get AntiForgeryToken (hidden input added by @Html.AntiForgeryToken())
+        let antiForgeryToken = document.querySelector('input[name="__RequestVerificationToken"]');
+        if (!antiForgeryToken) {
+            console.error("❌ AntiForgeryToken not found in the form!");
+            alert("❌ Security error: Missing CSRF token.");
+            return;
+        }
+
         let recaptchaResponse = grecaptcha.getResponse();
         if (!recaptchaResponse) {
             alert("⚠️ Please complete the reCAPTCHA before submitting.");
@@ -24,14 +31,15 @@
             phone: document.getElementById("phone").value,
             subject: document.getElementById("subject").value,
             message: document.getElementById("message").value,
-            gRecaptchaResponse: recaptchaResponse // ✅ Include reCAPTCHA response
+            gRecaptchaResponse: recaptchaResponse
         };
 
         try {
             let response = await fetch("/Contact/SubmitContactForm", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "RequestVerificationToken": antiForgeryToken.value 
                 },
                 body: JSON.stringify(formData)
             });

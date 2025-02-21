@@ -157,6 +157,8 @@
                         <label for="message">Message:</label><br>
                         <textarea id="message" name="message" required maxlength="600"></textarea><br>
 
+                        @Html.AntiForgeryToken()  <!-- 🔒 Adds a hidden CSRF token -->
+
                         <!-- Google reCAPTCHA -->
                         <div class="recaptcha-container">
                             <div class="g-recaptcha" data-sitekey="6Lc6zN0qAAAAAM1b3G3EjFpTLrHRjRq_aQHbfPEs"></div>

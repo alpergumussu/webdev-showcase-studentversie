@@ -325,9 +325,9 @@ label {
     }
 
     .card5 {
-        width: 100%; /* Makes it responsive */
-        max-width: 741px; /* Keeps max size for larger screens */
-        height: 900px; /* Allows content to expand naturally */
-        display: block; /* Ensures it’s visible */
+        width: 100%;
+        max-width: 741px; 
+        height: 920px;; 
+        display: block; 
     }
 }
