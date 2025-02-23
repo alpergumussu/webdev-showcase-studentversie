@@ -36,7 +36,6 @@
         <span class="line line-15"></span>
     </div>
 
-
     <section class="gdpr-consent hide" style="display: none;">
         <div class="gdpr-consent__description">
             <p>
@@ -157,7 +156,7 @@
                         <label for="message">Message:</label><br>
                         <textarea id="message" name="message" required maxlength="600"></textarea><br>
 
-                        @Html.AntiForgeryToken()  <!-- 🔒 Adds a hidden CSRF token -->
+                        @Html.AntiForgeryToken()  
 
                         <!-- Google reCAPTCHA -->
                         <div class="recaptcha-container">
@@ -171,24 +170,10 @@
                             <input type="submit" value="Submit">
                         </div>
                     </form>
-
-                
-
-                </article>
+               </article>
             </div>
         </section>
-        <!-- Success Popup -->
-        <div id="popup" class="popup-container">
-            <div class="popup-box">
-                <span id="closePopup" class="close-btn">&times;</span>
-                <h2>Thank You!</h2>
-                <p>Your form has been submitted successfully.</p>
-            </div>
-        </div>
-
     </main>
-
-    @RenderBody()
-
+@RenderBody()
 </body>
 </html>
