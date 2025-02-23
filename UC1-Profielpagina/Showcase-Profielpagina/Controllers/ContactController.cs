@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
-using Showcase_Profielpagina.Services;
 
 namespace Showcase_Contactpagina.Controllers
 {

@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Options;
-using Showcase_Profielpagina.Models;
-using Showcase_Profielpagina.Services;
+﻿using Showcase_Profielpagina.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
