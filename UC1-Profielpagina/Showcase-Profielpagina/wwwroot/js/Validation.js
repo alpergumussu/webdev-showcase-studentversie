@@ -58,7 +58,7 @@
             console.log("📨 Parsed JSON Response:", result);
             alert("✅ Success: " + (result.message || "Form submitted successfully!"));
             form.reset();
-            grecaptcha.reset(); // ✅ Reset reCAPTCHA after successful submission
+            grecaptcha.reset(); 
         } catch (error) {
             console.error("⚡ Fetch Error:", error);
             alert("❌ An error occurred while submitting the form. Check console for details.");
