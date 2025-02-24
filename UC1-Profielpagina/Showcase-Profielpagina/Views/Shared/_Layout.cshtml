@@ -6,50 +6,174 @@
     <title>@ViewData["Title"] - Showcase_Profielpagina</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/profielpagina.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/gdpr.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Showcase_Profielpagina.styles.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Showcase_Profielpagina</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Me">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - Showcase_Profielpagina - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    <link rel="stylesheet" href="~/css/Loader.css" asp-append-version="true" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/gdpr.js" asp-append-version="true"></script>
+    <script src="~/js/Validation.js" asp-append-version="true"></script> 
     @await RenderSectionAsync("Scripts", required: false)
+</head>
+<body>
+
+    <div class="preloader-1" id="loader">
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+        <span class="line line-4"></span>
+        <span class="line line-5"></span>
+        <span class="line line-6"></span>
+        <span class="line line-7"></span>
+        <span class="line line-8"></span>
+        <span class="line line-9"></span>
+        <span class="line line-10"></span>
+        <span class="line line-11"></span>
+        <span class="line line-12"></span>
+        <span class="line line-13"></span>
+        <span class="line line-14"></span>
+        <span class="line line-15"></span>
+    </div>
+
+    <section class="gdpr-consent hide" style="display: none;">
+        <div class="gdpr-consent__description">
+            <p>
+                Deze website gebruikt cookies.
+                We gebruiken cookies om content te personaliseren en voor het analyseren
+                van verkeer op de website.
+            </p>
+        </div>
+
+        <div class="gdpr-consent__choice">
+            <button class="gdpr-consent__button--accept">Ja</button>
+            <button class="gdpr-consent__button--reject">Nee</button>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <main id="content">
+        <!-- Card Section 1 -->
+        <section class="card-container-1">
+            <article class="card1">
+                <img src="images/IMG_4615.jpeg" alt="headshot" class="headshot-img">
+                <div class="card1-content">
+                    <h1 class="card1-title gradient-text">Hi, I am Alper - I Am a Software Engineer</h1>
+                    <h2 class="card1-subtext">I bring your ideas to life!</h2>
+                </div>
+            </article>
+            <article class="card2">
+                <div class="icon-container">
+                    <img src="images/briefcase.svg" alt="briefcase icon" width="111" height="111">
+                    <p class="icon-text">10+ Years Work Experience</p>
+                </div>
+
+                <div class="icon-container">
+                    <img src="images/group.svg" alt="group icon" width="110" height="110">
+                    <p class="icon-text">100+ Collaborations</p>
+                </div>
+
+                <div class="icon-container">
+                    <img src="images/handshake.svg" alt="handshake icon" width="110" height="110">
+                    <p class="icon-text">3 successful Projects</p>
+                </div>
+
+                <div class="icon-container">
+                    <img src="images/bug.svg" alt="bug icon" width="110" height="110">
+                    <p class="icon-text">0 BUGS IGNORED</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Card Section 2 (Updated) -->
+        <section class="card-container-2">
+            <!-- Card 4 (Move to the Left) -->
+            <div class="card4-container">
+                <article class="card4">
+                    <div class="skills-container">
+                        <h2 class="card1-title gradient-text">Skills & Strengths</h2>
+
+                        <div class="skill">
+                            <img src="images/coding(1).png" alt="Coding Icon" width="200" height="140">
+                            <p>Coding & Software</p>
+                        </div>
+
+                        <div class="skill">
+                            <img src="images/problem-solver-solution-problem-solving-skill(1).png" alt="Problem-Solving Icon" width="225" height="150">
+                            <p>Problem-Solving</p>
+                        </div>
+
+                        <div class="skill">
+                            <img src="images/adapt.svg" alt="Adaptability Icon" width="200" height="200">
+                            <p>Adaptability & Growth</p>
+                        </div>
+
+                        <div class="skill">
+                            <img src="images/artist-tools(1).svg" alt="Creativity Icon" width="200" height="200">
+                            <p>Creativity & Design</p>
+                        </div>
+
+                        <div class="skill">
+                            <img src="images/persistant.png" alt="Determination Icon" width="225" height="250">
+                            <p>Determination</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Card 3 & Card 5 (Move to the Right) -->
+            <div class="card3-container">
+                <article class="card3">
+                    <h2 class="card1-title gradient-text">Achievements in my professional life.</h2>
+                    <p>
+                        Hard work and perseverance have defined my journey. From a young age, I took on responsibilities beyond my years, learning discipline, leadership, and adaptability in every role I pursued.
+                        No challenge has ever stopped me—I’ve worked my way up through both education and career, proving that growth comes from persistence and a willingness to learn.
+                        Now, as I dive into Software Engineering, I bring with me the same dedication, problem-solving mindset, and drive to keep pushing forward, no matter the obstacles.
+                    </p>
+                </article>
+
+                <article class="card5">
+                    <h2 class="card1-title gradient-text">Contact Me</h2>
+                    <div id="error-box" class="error-box"></div>
+
+                    <form id="contactForm" method="post" action="/Contact/SubmitContactForm">
+                        <label for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname" required><br>
+
+                        <label for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname" required><br>
+
+                        <label for="email">E-mail:</label><br>
+                        <input type="email" id="email" name="email" required><br>
+
+                        <label for="phone">Phone Number:</label><br>
+                        <input type="tel" id="phone" name="phone" pattern="^\+?[0-9]{10,15}$" required><br>
+
+                        <label for="subject">Subject:</label><br>
+                        <input type="text" id="subject" name="subject" required maxlength="200"><br>
+
+                        <label for="message">Message:</label><br>
+                        <textarea id="message" name="message" required maxlength="600"></textarea><br>
+
+                        @Html.AntiForgeryToken()  
+
+                        <!-- Google reCAPTCHA -->
+                        <div class="recaptcha-container">
+                            <div class="g-recaptcha" data-sitekey="6Lc6zN0qAAAAAM1b3G3EjFpTLrHRjRq_aQHbfPEs"></div>
+                        </div>
+
+                        <!-- Hidden input for reCAPTCHA response -->
+                        <input type="hidden" id="gRecaptchaResponse" name="gRecaptchaResponse">
+
+                        <div class="button-container">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+               </article>
+            </div>
+        </section>
+    </main>
+@RenderBody()
 </body>
 </html>

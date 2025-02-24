@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/UC1-Profielpagina/Showcase-Profielpagina/appsettings.json
